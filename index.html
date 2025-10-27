@@ -3,23 +3,35 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dark Purple Background</title>
+  <title>Dark Purple Glow</title>
   <style>
     body {
       margin: 0;
       height: 100vh;
-      background: linear-gradient(to bottom, #5A0FAB, #2a004d);
+      background: radial-gradient(circle at top center, #6b1aff 0%, #5A0FAB 40%, #2a004d 100%);
       display: flex;
       align-items: center;
       justify-content: center;
       color: white;
       font-family: 'Poppins', sans-serif;
       font-size: 2em;
-      text-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+      text-shadow: 0 0 20px #9d4edd, 0 0 40px #5A0FAB;
+      overflow: hidden;
+    }
+
+    /* optional slow glow animation */
+    @keyframes glowPulse {
+      0% { filter: brightness(1); }
+      50% { filter: brightness(1.15); }
+      100% { filter: brightness(1); }
+    }
+
+    body {
+      animation: glowPulse 6s ease-in-out infinite;
     }
   </style>
 </head>
 <body>
-  Dark Purple Fade 🌌
+  Deep Purple Glow 🌌
 </body>
 </html>
